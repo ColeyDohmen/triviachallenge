@@ -9,16 +9,16 @@ function _draw() {
   let template = ''
   trivia.forEach(t => template += t.Template)
   document.getElementById("app").innerHTML = /*html*/`
-  <div class="row">
+  <div class="row py-3">
   ${template}
   </div>
-  <button class="btn btn-secondary" onclick="app.triviaController.next()">Next Question</button>
+  <button class="btn btn-secondary " onclick="app.triviaController.next()">Next Question</button>
   `
 }
 
 
 //Public
-export default class ValuesController {
+export default class TriviaController {
   constructor() {
     ProxyState.on("trivia", _draw);
     _draw()
